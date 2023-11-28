@@ -1,4 +1,4 @@
-import { Random } from '@woowacourse/mission-utils';
+import { Console, Random } from '@woowacourse/mission-utils';
 
 class Car {
   #name;
@@ -9,17 +9,21 @@ class Car {
     this.#position = '';
   }
 
-  racingStart(cars, cycleCount) {
-    cars.forEach((name) => {
-      if (this.dice()) {
-        this.#position;
-      }
-    });
+  moveCar() {
+    if (this.dice()) {
+      this.#position += '-';
+    }
   }
 
   dice() {
     const NUMBER = Random.pickNumberInRange(0, 9);
     return NUMBER > 3;
+  }
+
+  isWin() {}
+
+  output() {
+    Console.print(`${this.#name} : ${this.#position}`);
   }
 }
 
