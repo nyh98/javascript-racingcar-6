@@ -1,5 +1,5 @@
 import { Console } from '@woowacourse/mission-utils';
-import ERROR_LIST from './errorList.js';
+import ERROR_LIST from './ErrorList.js';
 
 const INPUT_VIEW = Object.freeze({
   async carNames() {
