@@ -10,8 +10,7 @@ class Car {
   }
 
   move(diceNumber) {
-    const STANDARD = 3;
-    if (diceNumber > STANDARD) {
+    if (diceNumber > 3) {
       this.#position++;
     }
   }
