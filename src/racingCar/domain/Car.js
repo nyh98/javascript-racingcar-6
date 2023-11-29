@@ -1,4 +1,4 @@
-import { Console, Random } from '@woowacourse/mission-utils';
+import { Console } from '@woowacourse/mission-utils';
 
 class Car {
   #name;
@@ -13,6 +13,14 @@ class Car {
     if (dice) {
       this.#position += '-';
     }
+  }
+
+  validateWinner(FarthestDistance) {
+    return this.calculateDistance() === FarthestDistance;
+  }
+
+  getName() {
+    return this.#name;
   }
 
   calculateDistance() {

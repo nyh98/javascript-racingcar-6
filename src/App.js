@@ -11,6 +11,7 @@ class App {
     const CARS = INPUT_NAMES.map((name) => new Car(name));
 
     Race.start(CARS, CYCLE_COUNT);
+    Race.winnerPrint(CARS);
   }
 }
 
