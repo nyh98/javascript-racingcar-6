@@ -15,7 +15,7 @@ class Car {
     }
   }
 
-  totalDistance() {
+  calculateDistance() {
     return this.#position.length;
   }
 

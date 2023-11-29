@@ -15,11 +15,11 @@ class Race {
 
   static winner() {}
 
-  static winDistance(array) {
+  static findFarthestDistance(array) {
     let count = 0;
     array.forEach((car) => {
-      if (car.totalDistance() > count) {
-        count = car.totalDistance();
+      if (car.calculateDistance() > count) {
+        count = car.calculateDistance();
       }
     });
     return count;
