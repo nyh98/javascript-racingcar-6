@@ -28,7 +28,7 @@ class Car {
     return this.#position.length;
   }
 
-  nowPosition() {
+  printNowPosition() {
     Console.print(`${this.#name} : ${this.#position}`);
   }
 }

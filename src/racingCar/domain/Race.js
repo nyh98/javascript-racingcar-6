@@ -15,7 +15,7 @@ class Race {
     for (let i = 0; i < count; i++) {
       cars.forEach((car) => {
         car.move(this.throwDice());
-        car.nowPosition();
+        car.printNowPosition();
       });
 
       Console.print(MESSAGES.vacuum);
