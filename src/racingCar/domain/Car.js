@@ -9,19 +9,14 @@ class Car {
     this.#position = '';
   }
 
-  move() {
-    if (this.dice()) {
+  move(dice) {
+    if (dice) {
       this.#position += '-';
     }
   }
 
   calculateDistance() {
     return this.#position.length;
-  }
-
-  dice() {
-    const NUMBER = Random.pickNumberInRange(0, 9);
-    return NUMBER > 3;
   }
 
   nowPosition() {
