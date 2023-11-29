@@ -1,7 +1,6 @@
 import INPUT_VIEW from './racingCar/domain/InputView.js';
 import Car from './racingCar/domain/Car.js';
 import Race from './racingCar/domain/Race.js';
-import { Console } from '@woowacourse/mission-utils';
 
 class App {
   async play() {
