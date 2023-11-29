@@ -18,7 +18,7 @@ class Race {
         car.printNowPosition();
       });
 
-      Console.print(MESSAGES.vacuum);
+      Console.print('');
     }
   }
 
