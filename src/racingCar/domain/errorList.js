@@ -1,7 +1,7 @@
 import MESSAGES from './Messages.js';
 
 const ERROR_LIST = Object.freeze({
-  checkOverName(divideNames) {
+  validateOverName(divideNames) {
     divideNames.forEach((name) => {
       if (name.length > 5) {
         throw new Error(MESSAGES.overName);
@@ -9,7 +9,7 @@ const ERROR_LIST = Object.freeze({
     });
   },
 
-  checkAllVacuum(divideNames) {
+  validateAllVacuum(divideNames) {
     divideNames.forEach((name) => {
       if (name.replace(/\s/g, '').length === 0) {
         throw new Error(MESSAGES.allVacuum);
@@ -18,11 +18,11 @@ const ERROR_LIST = Object.freeze({
   },
 
   allCheckName(divideNames) {
-    this.checkOverName(divideNames);
-    this.checkAllVacuum(divideNames);
+    this.validateOverName(divideNames);
+    this.validateAllVacuum(divideNames);
   },
 
-  checkCycle(inputCycleCount) {
+  validateCycle(inputCycleCount) {
     const NOT_NUMBER = /[^\d]/g;
     if (NOT_NUMBER.test(inputCycleCount)) {
       throw new Error(MESSAGES.notNumber);

@@ -12,7 +12,7 @@ const INPUT_VIEW = Object.freeze({
 
   async cycleCount() {
     const COUNT = await Console.readLineAsync(MESSAGES.inputCycle);
-    ERROR_LIST.checkCycle(COUNT);
+    ERROR_LIST.validateCycle(COUNT);
     const CYCLE_COUNT = Number(COUNT);
     return CYCLE_COUNT;
   },
