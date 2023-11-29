@@ -5,7 +5,7 @@ import Race from './racingCar/domain/Race.js';
 class App {
   async play() {
     const INPUT_NAMES = await INPUT_VIEW.carNames();
-    const CYCLE_COUNT = await INPUT_VIEW.cycleCount();
+    const CYCLE_COUNT = await INPUT_VIEW.turnCount();
 
     const CARS = INPUT_NAMES.map((name) => new Car(name));
 

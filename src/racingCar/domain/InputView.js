@@ -10,7 +10,7 @@ const INPUT_VIEW = Object.freeze({
     return DIVIDE_NAMES;
   },
 
-  async cycleCount() {
+  async turnCount() {
     const COUNT = await Console.readLineAsync(MESSAGES.inputCycle);
     ERROR_LIST.validateCycle(COUNT);
     const CYCLE_COUNT = Number(COUNT);
