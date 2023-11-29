@@ -5,11 +5,11 @@ import Race from './racingCar/domain/Race.js';
 class App {
   async play() {
     const INPUT_NAMES = await INPUT_VIEW.carNames();
-    const CYCLE_COUNT = await INPUT_VIEW.turnCount();
+    const TURN_COUNT = await INPUT_VIEW.turnCount();
 
     const CARS = INPUT_NAMES.map((name) => new Car(name));
 
-    Race.start(CARS, CYCLE_COUNT);
+    Race.start(CARS, TURN_COUNT);
     Race.printWinner(CARS);
   }
 }

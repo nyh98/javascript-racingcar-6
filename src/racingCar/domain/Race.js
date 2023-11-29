@@ -42,12 +42,12 @@ class Race {
   }
 
   static findFarthestDistance(carsArray) {
-    let count = 0;
+    let FarthestDistance = 0;
 
     carsArray.forEach((car) => {
       const CAR_DISTANCE = car.getPosition();
       if (CAR_DISTANCE > count) {
-        count = CAR_DISTANCE;
+        FarthestDistance = CAR_DISTANCE;
       }
     });
 
