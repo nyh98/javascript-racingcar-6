@@ -9,7 +9,7 @@ class Race {
     this.#cars = cars;
   }
 
-  throwDice() {
+  rollDice() {
     const NUMBER = Random.pickNumberInRange(0, 9);
 
     return NUMBER;
@@ -20,44 +20,32 @@ class Race {
 
     for (let i = 0; i < turnCount; i++) {
       this.#cars.forEach((car) => {
-        car.move(this.throwDice());
+        car.move(this.rollDice());
         car.printNowPosition();
       });
 
       Console.print('');
     }
+
+    return this.getWinners();
   }
 
-  printWinner() {
-    const WINNER_NAMES = this.getWinnerNames();
+  printWinner(cars) {
+    const WINNER_NAMES = cars.map((car) => car.getName());
     const OUTPUT_NAME = WINNER_NAMES.join(',');
     Console.print(`${MESSAGES.win} ${OUTPUT_NAME}`);
   }
 
-  getWinnerNames() {
-    const WINNER_NAMES = [];
+  getWinners() {
     const FARTHEST_DISTANCE = this.findFarthestDistance();
-
-    for (const CAR of this.#cars) {
-      if (CAR.getPosition() === FARTHEST_DISTANCE) {
-        WINNER_NAMES.push(CAR.getName());
-      }
-    }
-
-    return WINNER_NAMES;
+    return this.#cars.filter((car) => car.getPosition() === FARTHEST_DISTANCE);
   }
 
   findFarthestDistance() {
-    let FarthestDistance = 0;
+    const POSITIONS = this.#cars.map((car) => car.getPosition());
+    const FARTHEST_DISTANCE = Math.max(...POSITIONS);
 
-    this.#cars.forEach((car) => {
-      const CAR_DISTANCE = car.getPosition();
-      if (CAR_DISTANCE > FarthestDistance) {
-        FarthestDistance = CAR_DISTANCE;
-      }
-    });
-
-    return FarthestDistance;
+    return FARTHEST_DISTANCE;
   }
 }
 
