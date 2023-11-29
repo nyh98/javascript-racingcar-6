@@ -8,9 +8,10 @@ class App {
     const TURN_COUNT = await INPUT_VIEW.turnCount();
 
     const CARS = INPUT_NAMES.map((name) => new Car(name));
+    const RACE = new Race(CARS);
 
-    Race.start(CARS, TURN_COUNT);
-    Race.printWinner(CARS);
+    RACE.start(TURN_COUNT);
+    RACE.printWinner();
   }
 }
 

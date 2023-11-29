@@ -3,17 +3,23 @@ import { Console } from '@woowacourse/mission-utils';
 import { Random } from '@woowacourse/mission-utils';
 
 class Race {
-  static throwDice() {
+  #cars;
+
+  constructor(cars) {
+    this.#cars = cars;
+  }
+
+  throwDice() {
     const NUMBER = Random.pickNumberInRange(0, 9);
 
     return NUMBER;
   }
 
-  static start(carsArray, count) {
+  start(turnCount) {
     Console.print(MESSAGES.play);
 
-    for (let i = 0; i < count; i++) {
-      carsArray.forEach((car) => {
+    for (let i = 0; i < turnCount; i++) {
+      this.#cars.forEach((car) => {
         car.move(this.throwDice());
         car.printNowPosition();
       });
@@ -22,17 +28,17 @@ class Race {
     }
   }
 
-  static printWinner(carsArray) {
-    const WINNER_NAMES = this.getWinnerNames(carsArray);
+  printWinner() {
+    const WINNER_NAMES = this.getWinnerNames();
     const OUTPUT_NAME = WINNER_NAMES.join(',');
     Console.print(`${MESSAGES.win} ${OUTPUT_NAME}`);
   }
 
-  static getWinnerNames(carsArray) {
+  getWinnerNames() {
     const WINNER_NAMES = [];
-    const FARTHEST_DISTANCE = this.findFarthestDistance(carsArray);
+    const FARTHEST_DISTANCE = this.findFarthestDistance();
 
-    for (const CAR of carsArray) {
+    for (const CAR of this.#cars) {
       if (CAR.getPosition() === FARTHEST_DISTANCE) {
         WINNER_NAMES.push(CAR.getName());
       }
@@ -41,10 +47,10 @@ class Race {
     return WINNER_NAMES;
   }
 
-  static findFarthestDistance(carsArray) {
+  findFarthestDistance() {
     let FarthestDistance = 0;
 
-    carsArray.forEach((car) => {
+    this.#cars.forEach((car) => {
       const CAR_DISTANCE = car.getPosition();
       if (CAR_DISTANCE > FarthestDistance) {
         FarthestDistance = CAR_DISTANCE;

@@ -11,9 +11,9 @@ const INPUT_VIEW = Object.freeze({
 
   async turnCount() {
     const COUNT = await Console.readLineAsync(MESSAGES.inputCycle);
-    this.validateCycle(COUNT);
-    const CYCLE_COUNT = Number(COUNT);
-    return CYCLE_COUNT;
+    this.validateTurnCount(COUNT);
+    const TURN_COUNT = Number(COUNT);
+    return TURN_COUNT;
   },
 
   validateOverName(divideNames) {
@@ -37,7 +37,7 @@ const INPUT_VIEW = Object.freeze({
     this.validateAllBlank(divideNames);
   },
 
-  validateCycle(inputCycleCount) {
+  validateTurnCount(inputCycleCount) {
     const NOT_NUMBER = /[^\d]/g;
     if (NOT_NUMBER.test(inputCycleCount)) {
       throw new Error(MESSAGES.notNumber);
