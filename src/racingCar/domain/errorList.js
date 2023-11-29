@@ -1,4 +1,4 @@
-import MESSAGES from './Message.js';
+import MESSAGES from './Messages.js';
 
 const ERROR_LIST = Object.freeze({
   checkOverName(divideNames) {

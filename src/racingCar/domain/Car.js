@@ -9,10 +9,14 @@ class Car {
     this.#position = '';
   }
 
-  moveCar() {
+  move() {
     if (this.dice()) {
       this.#position += '-';
     }
+  }
+
+  totalDistance() {
+    return this.#position.length;
   }
 
   dice() {
@@ -20,9 +24,7 @@ class Car {
     return NUMBER > 3;
   }
 
-  isWin() {}
-
-  output() {
+  nowPosition() {
     Console.print(`${this.#name} : ${this.#position}`);
   }
 }
