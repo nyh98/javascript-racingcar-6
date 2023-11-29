@@ -5,7 +5,8 @@ import { Random } from '@woowacourse/mission-utils';
 class Race {
   static dice() {
     const NUMBER = Random.pickNumberInRange(0, 9);
-    return NUMBER > 3;
+    const STANDARD = 3;
+    return NUMBER > STANDARD;
   }
 
   static start(array, count) {
