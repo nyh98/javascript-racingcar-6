@@ -23,12 +23,12 @@ class Race {
   }
 
   static printWinner(carsArray) {
-    const WINNER = this.winner(carsArray);
-    const OUTPUT_NAME = WINNER.join(',');
+    const WINNER_NAMES = this.getWinnerNames(carsArray);
+    const OUTPUT_NAME = WINNER_NAMES.join(',');
     Console.print(`${MESSAGES.win} ${OUTPUT_NAME}`);
   }
 
-  static winner(carsArray) {
+  static getWinnerNames(carsArray) {
     const WINNER_NAMES = [];
     const FARTHEST_DISTANCE = this.findFarthestDistance(carsArray);
 
@@ -46,12 +46,12 @@ class Race {
 
     carsArray.forEach((car) => {
       const CAR_DISTANCE = car.getPosition();
-      if (CAR_DISTANCE > count) {
+      if (CAR_DISTANCE > FarthestDistance) {
         FarthestDistance = CAR_DISTANCE;
       }
     });
 
-    return count;
+    return FarthestDistance;
   }
 }
 
