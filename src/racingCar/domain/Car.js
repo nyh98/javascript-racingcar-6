@@ -6,30 +6,26 @@ class Car {
 
   constructor(name) {
     this.#name = name;
-    this.#position = '';
+    this.#position = 0;
   }
 
   move(diceNumber) {
     const STANDARD = 3;
     if (diceNumber > STANDARD) {
-      this.#position += '-';
+      this.#position++;
     }
-  }
-
-  validateWinner(FarthestDistance) {
-    return this.calculateDistance() === FarthestDistance;
   }
 
   getName() {
     return this.#name;
   }
 
-  calculateDistance() {
-    return this.#position.length;
+  getPosition() {
+    return this.#position;
   }
 
   printNowPosition() {
-    Console.print(`${this.#name} : ${this.#position}`);
+    Console.print(`${this.#name} : ${'-'.repeat(this.#position)}`);
   }
 }
 

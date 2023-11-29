@@ -33,7 +33,7 @@ class Race {
     const FARTHEST_DISTANCE = this.findFarthestDistance(carsArray);
 
     for (const CAR of carsArray) {
-      if (CAR.validateWinner(FARTHEST_DISTANCE)) {
+      if (CAR.getPosition() === FARTHEST_DISTANCE) {
         WINNER_NAMES.push(CAR.getName());
       }
     }
@@ -45,7 +45,7 @@ class Race {
     let count = 0;
 
     carsArray.forEach((car) => {
-      const CAR_DISTANCE = car.calculateDistance();
+      const CAR_DISTANCE = car.getPosition();
       if (CAR_DISTANCE > count) {
         count = CAR_DISTANCE;
       }
