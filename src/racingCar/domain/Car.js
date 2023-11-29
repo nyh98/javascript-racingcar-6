@@ -9,8 +9,9 @@ class Car {
     this.#position = '';
   }
 
-  move(dice) {
-    if (dice) {
+  move(diceNumber) {
+    const STANDARD = 3;
+    if (diceNumber > STANDARD) {
       this.#position += '-';
     }
   }

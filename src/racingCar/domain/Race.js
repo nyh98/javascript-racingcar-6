@@ -3,11 +3,10 @@ import { Console } from '@woowacourse/mission-utils';
 import { Random } from '@woowacourse/mission-utils';
 
 class Race {
-  static dice() {
+  static throwDice() {
     const NUMBER = Random.pickNumberInRange(0, 9);
-    const STANDARD = 3;
 
-    return NUMBER > STANDARD;
+    return NUMBER;
   }
 
   static start(cars, count) {
@@ -15,7 +14,7 @@ class Race {
 
     for (let i = 0; i < count; i++) {
       cars.forEach((car) => {
-        car.move(this.dice());
+        car.move(this.throwDice());
         car.nowPosition();
       });
 
