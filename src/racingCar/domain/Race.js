@@ -22,7 +22,7 @@ class Race {
     }
   }
 
-  static winnerPrint(cars) {
+  static printWinner(cars) {
     const WINNER = this.winner(cars);
     const OUTPUT_NAME = WINNER.join(',');
     Console.print(`${MESSAGES.win} ${OUTPUT_NAME}`);
